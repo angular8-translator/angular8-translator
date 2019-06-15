@@ -16,7 +16,7 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 
 
 ```
-import { AngularTranslatorModule } from 'angular-translator';
+import { AngularTranslatorModule } from 'angular8-translator';
 [...]
 @NgModule({
     [...]
@@ -36,7 +36,7 @@ import { AngularTranslatorModule } from 'angular-translator';
 
 ```
 import { Component, OnInit } from '@angular/core';
-import { AngularTranslatorService, Language } from 'angular-translator';
+import { AngularTranslatorService, Language } from 'angular8-translator';
 
 @Component({
   selector: 'app-home-page',
