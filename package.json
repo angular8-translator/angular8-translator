@@ -1,7 +1,7 @@
 {
   "name": "angular8-translator",
-  "version": "0.0.2",
-  "main": "src/public_api.ts",
+  "version": "0.0.3",
+  "main": "src/index.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/angular8-translator/angular8-translator.git"
@@ -10,6 +10,7 @@
   "bugs": {
     "url": "https://github.com/angular8-translator/angular8-translator/issues"
   },
+  "keywords": ["angular", "angular.io", "Angular 8", "languages", "translation", "translator"],
   "peerDependencies": {
     "@angular/common": "^8.0.1",
     "@angular/core": "^8.0.1"
