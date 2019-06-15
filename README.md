@@ -4,16 +4,68 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Introduction
 
-Run `ng generate component component-name --project angular-translator` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project angular-translator`.
-> Note: Don't forget to add `--project angular-translator` or else it will be added to the default project in your `angular.json` file. 
+
+
+## Setup
+
+1- Install this library on your project: `npm install --save angular8-translator`
+
+
+2- Import the `AngularTranslatorModule` on your app.module.ts:
+
+
+
+```
+import { AngularTranslatorModule } from 'angular-translator/public-api';
+[...]
+@NgModule({
+    [...]
+    imports: [
+        [...]
+        AngularTranslatorModule,
+    ]
+]
+```
+
 
 ## Geting Started
 
-Run `ng build angular-translator` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+3- Import `AngularTranslatorService`, set your default language and additional language options
+
+
+```
+import { Component, OnInit } from '@angular/core';
+import { AngularTranslatorService, Language } from 'angular-translator/public-api';
+
+@Component({
+  selector: 'app-home-page',
+  template: '<div> <h1> {{ t.string.WELCOME }} </h1> </div>',
+})
+export class HomePageComponent implements OnInit {
+  constructor(
+    public t: AngularTranslatorService,
+  ) {
+    const en = { WELCOME: "Welcome" };
+    const pt = { WELCOME: "Bem Vindo" };
+    const es = { WELCOME: "Bienvenida" };
+    const fr = { WELCOME: "Bienvenue" };
+    const de = { WELCOME: "Herzlich willkommen"};
+
+    t.setDefaultLanguage(en);
+    t.setLanguageOption(Language.English, en);
+    t.setLanguageOption(Language.Portuguese, pt);
+    t.setLanguageOption(Language.Spanish, es);
+    t.setLanguageOption(Language.French, fr);
+    t.setLanguageOption(Language.German, de);
+  }
+}
+
+```
 
 ## JSON files
 
-After building your library with `ng build angular-translator`, go to the dist folder `cd dist/angular-translator` and run `npm publish`.
+You can to import JSON files with translations and set to `AngularTranslatorService`.
 
 ## Further help
 
